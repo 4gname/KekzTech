@@ -18,7 +18,7 @@ public class IB_TFFTStorageFieldBlockT4 extends ItemBlock {
 	public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
 		lines.add("This is not a fluid tank");
 		lines.add("Capacity:  128 000 000L for 1 fluid (Total 25 fluid)");
-		lines.add("Power Draw: 4EU/t");
+		lines.add("Power Draw: 4 EU/t");
 	}
 	
 }

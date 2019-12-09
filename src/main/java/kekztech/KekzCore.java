@@ -11,6 +11,9 @@ import blocks.Block_TFFTStorageFieldBlockT2;
 import blocks.Block_TFFTStorageFieldBlockT3;
 import blocks.Block_TFFTStorageFieldBlockT4;
 import blocks.Block_TFFTStorageFieldBlockT5;
+import blocks.Block_TFFTStorageFieldBlockT6;
+import blocks.Block_TFFTStorageFieldBlockT7;
+import blocks.Block_TFFTStorageFieldBlockT8;
 import blocks.Block_YSZUnit;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -80,6 +83,9 @@ public class KekzCore {
 		Block_TFFTStorageFieldBlockT3.getInstance().registerBlock();
 		Block_TFFTStorageFieldBlockT4.getInstance().registerBlock();
 		Block_TFFTStorageFieldBlockT5.getInstance().registerBlock();
+		Block_TFFTStorageFieldBlockT6.getInstance().registerBlock();
+		Block_TFFTStorageFieldBlockT7.getInstance().registerBlock();
+		Block_TFFTStorageFieldBlockT8.getInstance().registerBlock();
 		Block_TFFTMultiHatch.getInstance().registerBlock();
 		Block_ReactorChamber_OFF.getInstance().registerBlock();
 		Block_ReactorChamber_ON.getInstance().registerBlock();
@@ -161,7 +167,9 @@ public class KekzCore {
 				new ItemStack(Block_GDCUnit.getInstance(), 1), 
 				2400, 1920);
 		
-		// T.F.F.T Structure blocks
+// - - - - T.F.F.T Structure blocks - - - - / / /
+
+//Tank Casing
 		final ItemStack[] tfftcasing = {
 			GT_Utility.getIntegratedCircuit(6),
 			GT_OreDictUnificator.get(OrePrefixes.plate, Materials.DarkSteel, 3),
@@ -173,6 +181,10 @@ public class KekzCore {
 				FluidRegistry.getFluidStack("molten.polytetrafluoroethylene", 144),
 				new ItemStack(Block_TFFTCasing.getInstance(), 1), 
 				200, 256);
+
+// - - - Tank Fields - - - //
+
+//Field Tier 1
 		final ItemStack[] tfftstoragefield1 = {
 			GT_Utility.getIntegratedCircuit(6),
 			GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
@@ -185,6 +197,7 @@ public class KekzCore {
 				FluidRegistry.getFluidStack("molten.glass", 144),
 				new ItemStack(Block_TFFTStorageFieldBlockT1.getInstance(), 1), 
 				200, 256);
+//Field Tier 2
 		final ItemStack[] tfftstoragefield2 = {
 				GT_Utility.getIntegratedCircuit(6),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 2),
@@ -197,6 +210,7 @@ public class KekzCore {
 				FluidRegistry.getFluidStack("molten.plastic", 576),
 				new ItemStack(Block_TFFTStorageFieldBlockT2.getInstance(), 1), 
 				200, 480);
+//Field Tier 3
 		final ItemStack[] tfftstoragefield3 = {
 				GT_Utility.getIntegratedCircuit(6),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 4),
@@ -210,6 +224,7 @@ public class KekzCore {
 				FluidRegistry.getFluidStack("molten.epoxid", 576),
 				new ItemStack(Block_TFFTStorageFieldBlockT3.getInstance(), 1), 
 				300, 1920);
+//Field Tier 4
 		final ItemStack[] tfftstoragefield4 = {
 				GT_Utility.getIntegratedCircuit(6),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
@@ -223,7 +238,7 @@ public class KekzCore {
 				FluidRegistry.getFluidStack("molten.epoxid", 1152),
 				new ItemStack(Block_TFFTStorageFieldBlockT5.getInstance(), 1),
 				400, 4098);
-
+//Field Tier 5
         final ItemStack[] tfftstoragefield5 = {
                 GT_Utility.getIntegratedCircuit(6),
                 GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
@@ -238,6 +253,50 @@ public class KekzCore {
                 new ItemStack(Block_TFFTStorageFieldBlockT5.getInstance(), 1),
                 400, 4098);
 
+//Field Tier 6
+		final ItemStack[] tfftstoragefield6 = {
+				GT_Utility.getIntegratedCircuit(7),
+				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1),
+				GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1),
+				ItemList.Field_Generator_HV.get(1L),
+				ItemList.Electric_Pump_EV.get(1L)
+		};
+		GT_Values.RA.addAssemblerRecipe(
+				tfftstoragefield6,
+				FluidRegistry.getFluidStack("molten.epoxid", 1152),
+				new ItemStack(Block_TFFTStorageFieldBlockT6.getInstance(), 1),
+				400, 4098);
+//Field Tier 7
+		final ItemStack[] tfftstoragefield7 = {
+				GT_Utility.getIntegratedCircuit(8),
+				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1),
+				GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1),
+				ItemList.Field_Generator_HV.get(1L),
+				ItemList.Electric_Pump_EV.get(1L)
+		};
+		GT_Values.RA.addAssemblerRecipe(
+				tfftstoragefield7,
+				FluidRegistry.getFluidStack("molten.epoxid", 1152),
+				new ItemStack(Block_TFFTStorageFieldBlockT7.getInstance(), 1),
+				400, 4098);
+//Field Tier 8
+		final ItemStack[] tfftstoragefield8 = {
+				GT_Utility.getIntegratedCircuit(9),
+				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1),
+				GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1),
+				ItemList.Field_Generator_HV.get(1L),
+				ItemList.Electric_Pump_EV.get(1L)
+		};
+		GT_Values.RA.addAssemblerRecipe(
+				tfftstoragefield8,
+				FluidRegistry.getFluidStack("molten.epoxid", 1152),
+				new ItemStack(Block_TFFTStorageFieldBlockT8.getInstance(), 1),
+				400, 4098);
+
+// - - - Multi Hatch - - - //
 
 		final Object[] multi_hatch = {
 				"PRP", "UFU", "PRP",
@@ -247,8 +306,10 @@ public class KekzCore {
 				'F', ItemList.Field_Generator_HV.get(1L)
 		};		
 		GT_ModHandler.addCraftingRecipe(new ItemStack(Block_TFFTMultiHatch.getInstance()), multi_hatch);
-		
-		// Reactor structure blocks
+
+//  -  -  -  -  Reactor  -  -  -  -  //
+
+// Reactor structure blocks
 		final ItemStack[] controlrod = {
 				GT_Utility.getIntegratedCircuit(6),
 				GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Lead, 1),

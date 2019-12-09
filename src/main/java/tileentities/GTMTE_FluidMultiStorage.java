@@ -13,6 +13,9 @@ import blocks.Block_TFFTStorageFieldBlockT2;
 import blocks.Block_TFFTStorageFieldBlockT3;
 import blocks.Block_TFFTStorageFieldBlockT4;
 import blocks.Block_TFFTStorageFieldBlockT5;
+import blocks.Block_TFFTStorageFieldBlockT6;
+import blocks.Block_TFFTStorageFieldBlockT7;
+import blocks.Block_TFFTStorageFieldBlockT8;
 import gregtech.api.enums.Textures.BlockIcons;
 import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
@@ -46,6 +49,9 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 	private final Block STORAGE_FIELD3 = Block_TFFTStorageFieldBlockT3.getInstance();
 	private final Block STORAGE_FIELD4 = Block_TFFTStorageFieldBlockT4.getInstance();
 	private final Block STORAGE_FIELD5 = Block_TFFTStorageFieldBlockT5.getInstance();
+	private final Block STORAGE_FIELD6 = Block_TFFTStorageFieldBlockT6.getInstance();
+	private final Block STORAGE_FIELD7 = Block_TFFTStorageFieldBlockT7.getInstance();
+	private final Block STORAGE_FIELD8 = Block_TFFTStorageFieldBlockT8.getInstance();
 	private final Block MULTI_HATCH = Block_TFFTMultiHatch.getInstance();
 	private final int CASING_TEXTURE_ID = 176;
 	
@@ -329,22 +335,42 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 								.equals(STORAGE_FIELD1.getUnlocalizedName())) {
 							runningCostAcc += 0.5f;
 							fluidCapacityAcc += 6349206.3f;
+
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD2.getUnlocalizedName())) {
 							runningCostAcc += 1.0f;
-							fluidCapacityAcc += 12698412.7f;
+							fluidCapacityAcc += 12698412.6f;
+
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD3.getUnlocalizedName())) {
 							runningCostAcc += 2.0f;
-							fluidCapacityAcc += 25396825.4f;
+							fluidCapacityAcc += 25396825.3f;
+
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD4.getUnlocalizedName())) {
 							runningCostAcc += 4.0f;
-							fluidCapacityAcc += 50793650.8f;
+
+							fluidCapacityAcc += 50793650.7f;
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD5.getUnlocalizedName())) {
 							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 101587301.6f;
+							fluidCapacityAcc += 101587301.5f;
+
+						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
+								.equals(STORAGE_FIELD6.getUnlocalizedName())) {
+							runningCostAcc += 8.0f;
+							fluidCapacityAcc += 203174603.1f;
+
+						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
+								.equals(STORAGE_FIELD7.getUnlocalizedName())) {
+							runningCostAcc += 8.0f;
+							fluidCapacityAcc += 406349206.3f;
+
+						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
+								.equals(STORAGE_FIELD8.getUnlocalizedName())) {
+							runningCostAcc += 8.0f;
+							fluidCapacityAcc += 812698412.6f;
+
 						} else {
 							formationChecklist = false;
 						}
@@ -489,12 +515,11 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 		
 		ll.add(EnumChatFormatting.YELLOW + "Operational Data:" + EnumChatFormatting.RESET);
 		ll.add("Auto-voiding: " + doVoidExcess);
-		ll.add("Per-Fluid Capacity: " + mfh.getCapacity() + "L");
-		ll.add("Running Cost: " + (-super.mEUt) + "EU/t");
+		ll.add("Capacity: " + mfh.getCapacity() + " L");
+		ll.add("Running Cost: " + (-super.mEUt) + " EU/t");
 		ll.add("Maintenance Status: " + ((super.getRepairStatus() == super.getIdealStatus()) 
 				? EnumChatFormatting.GREEN + "Working perfectly" + EnumChatFormatting.RESET 
 						: EnumChatFormatting.RED + "Has Problems" + EnumChatFormatting.RESET));
-		ll.add("---------------------------------------------");
 		
 		final String[] a = new String[ll.size()];
 		return ll.toArray(a);
