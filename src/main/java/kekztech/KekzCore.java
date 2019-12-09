@@ -2,6 +2,8 @@ package kekztech;
 
 import blocks.Block_ControlRod;
 import blocks.Block_GDCUnit;
+import blocks.Block_ItemDistributionCable;
+import blocks.Block_ItemDistributionNode;
 import blocks.Block_ReactorChamber_OFF;
 import blocks.Block_ReactorChamber_ON;
 import blocks.Block_TFFTCasing;
@@ -85,9 +87,8 @@ public class KekzCore {
 		Block_ReactorChamber_OFF.getInstance().registerBlock();
 		Block_ReactorChamber_ON.getInstance().registerBlock();
 		Block_ControlRod.getInstance().registerBlock();
-		// TODO: Disabled for new release
-		//Block_ItemDistributionCable.getInstance().registerBlock();
-		//Block_ItemDistributionNode.getInstance().registerBlock();
+		Block_ItemDistributionCable.getInstance().registerBlock();
+		Block_ItemDistributionNode.getInstance().registerBlock();
 		// Register TileEntities
 		GameRegistry.registerTileEntity(TE_TFFTMultiHatch.class, "kekztech_tfftmultihatch_tile");
 		GameRegistry.registerTileEntity(TE_ItemDistributionCable.class, "kekztech_itemdistributioncable_tile");
