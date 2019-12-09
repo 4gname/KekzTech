@@ -14,7 +14,7 @@ import net.minecraft.util.IIcon;
 public class MetaItem_CraftingComponent extends Item {
 	
 	private static MetaItem_CraftingComponent instance = new MetaItem_CraftingComponent();
-	private final IIcon[] icons = new IIcon[17];
+	private final IIcon[] icons = new IIcon[16];
 	
 	private MetaItem_CraftingComponent() {
 		// I am a singleton
@@ -56,7 +56,6 @@ public class MetaItem_CraftingComponent extends Item {
 		icons[counter++] = reg.registerIcon(KekzCore.MODID + ":" + "CeriaDust");
 		icons[counter++] = reg.registerIcon(KekzCore.MODID + ":" + "YSZCeramicPlate");
 		icons[counter++] = reg.registerIcon(KekzCore.MODID + ":" + "GDCCeramicPlate");
-		icons[counter++] = reg.registerIcon(KekzCore.MODID + ":" + "ItemServerBlade");
 	}
 	
 	@Override
