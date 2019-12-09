@@ -1,5 +1,7 @@
 package reactor.items;
 
+import kekztech.GTRecipe;
+
 public class HeatVent {
 	
 	public static final String TYPE = "HeatVent";
@@ -39,6 +41,10 @@ public class HeatVent {
 			6, 12, 48, 96,
 			0, 0, 0, 0,
 			10, 20, 80, 160
+	};
+	
+	public static final GTRecipe[] RECIPE = {
+			
 	};
 	
 }
