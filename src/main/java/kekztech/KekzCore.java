@@ -3,8 +3,6 @@ package kekztech;
 import blocks.Block_ControlRod;
 import blocks.Block_GDCUnit;
 import blocks.Block_ItemServerDrive;
-import blocks.Block_ItemServerIOPort;
-import blocks.Block_ItemServerRackCasing;
 import blocks.Block_ReactorChamber_OFF;
 import blocks.Block_ReactorChamber_ON;
 import blocks.Block_TFFTCasing;
@@ -91,8 +89,6 @@ public class KekzCore {
 		Block_ReactorChamber_ON.getInstance().registerBlock();
 		Block_ControlRod.getInstance().registerBlock();
 		Block_ItemServerDrive.getInstance().registerBlock();
-		Block_ItemServerRackCasing.getInstance().registerBlock();
-		Block_ItemServerIOPort.getInstance().registerBlock();
 		// TODO: Disabled for new release
 		//Block_ItemDistributionCable.getInstance().registerBlock();
 		//Block_ItemDistributionNode.getInstance().registerBlock();

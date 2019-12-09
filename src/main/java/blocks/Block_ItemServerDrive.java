@@ -52,9 +52,4 @@ public class Block_ItemServerDrive extends Block{
 		return faces[side];
 	}
 	
-	@Override
-	public int getLightValue() {
-		return 7;
-	}
-	
 }
