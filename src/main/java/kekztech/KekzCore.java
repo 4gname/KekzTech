@@ -10,6 +10,7 @@ import blocks.Block_TFFTStorageFieldBlockT1;
 import blocks.Block_TFFTStorageFieldBlockT2;
 import blocks.Block_TFFTStorageFieldBlockT3;
 import blocks.Block_TFFTStorageFieldBlockT4;
+import blocks.Block_TFFTStorageFieldBlockT5;
 import blocks.Block_YSZUnit;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -78,6 +79,7 @@ public class KekzCore {
 		Block_TFFTStorageFieldBlockT2.getInstance().registerBlock();
 		Block_TFFTStorageFieldBlockT3.getInstance().registerBlock();
 		Block_TFFTStorageFieldBlockT4.getInstance().registerBlock();
+		Block_TFFTStorageFieldBlockT5.getInstance().registerBlock();
 		Block_TFFTMultiHatch.getInstance().registerBlock();
 		Block_ReactorChamber_OFF.getInstance().registerBlock();
 		Block_ReactorChamber_ON.getInstance().registerBlock();
@@ -217,10 +219,26 @@ public class KekzCore {
 				ItemList.Electric_Pump_EV.get(1L)
 			};
 		GT_Values.RA.addAssemblerRecipe(
-				tfftstoragefield4, 
+				tfftstoragefield4,
 				FluidRegistry.getFluidStack("molten.epoxid", 1152),
-				new ItemStack(Block_TFFTStorageFieldBlockT4.getInstance(), 1), 
+				new ItemStack(Block_TFFTStorageFieldBlockT5.getInstance(), 1),
 				400, 4098);
+
+        final ItemStack[] tfftstoragefield5 = {
+                GT_Utility.getIntegratedCircuit(6),
+                GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Elite, 4),
+                GT_OreDictUnificator.get(OrePrefixes.plate, Materials.NiobiumTitanium, 1),
+                GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1),
+                ItemList.Field_Generator_HV.get(1L),
+                ItemList.Electric_Pump_EV.get(1L)
+        };
+        GT_Values.RA.addAssemblerRecipe(
+                tfftstoragefield5,
+                FluidRegistry.getFluidStack("molten.epoxid", 1152),
+                new ItemStack(Block_TFFTStorageFieldBlockT5.getInstance(), 1),
+                400, 4098);
+
+
 		final Object[] multi_hatch = {
 				"PRP", "UFU", "PRP",
 				'P', GT_OreDictUnificator.get(OrePrefixes.pipeTiny, Materials.NiobiumTitanium, 1),

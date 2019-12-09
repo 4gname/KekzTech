@@ -12,6 +12,7 @@ import blocks.Block_TFFTStorageFieldBlockT1;
 import blocks.Block_TFFTStorageFieldBlockT2;
 import blocks.Block_TFFTStorageFieldBlockT3;
 import blocks.Block_TFFTStorageFieldBlockT4;
+import blocks.Block_TFFTStorageFieldBlockT5;
 import gregtech.api.enums.Textures.BlockIcons;
 import gregtech.api.gui.GT_GUIContainer_MultiMachine;
 import gregtech.api.interfaces.ITexture;
@@ -44,6 +45,7 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 	private final Block STORAGE_FIELD2 = Block_TFFTStorageFieldBlockT2.getInstance();
 	private final Block STORAGE_FIELD3 = Block_TFFTStorageFieldBlockT3.getInstance();
 	private final Block STORAGE_FIELD4 = Block_TFFTStorageFieldBlockT4.getInstance();
+	private final Block STORAGE_FIELD5 = Block_TFFTStorageFieldBlockT5.getInstance();
 	private final Block MULTI_HATCH = Block_TFFTMultiHatch.getInstance();
 	private final int CASING_TEXTURE_ID = 176;
 	
@@ -326,19 +328,23 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 						if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD1.getUnlocalizedName())) {
 							runningCostAcc += 0.5f;
-							fluidCapacityAcc += 500000.0f;
+							fluidCapacityAcc += 6349206.3f;
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD2.getUnlocalizedName())) {
 							runningCostAcc += 1.0f;
-							fluidCapacityAcc += 4000000.0f;
+							fluidCapacityAcc += 12698412.7f;
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD3.getUnlocalizedName())) {
 							runningCostAcc += 2.0f;
-							fluidCapacityAcc += 16000000.0f;
+							fluidCapacityAcc += 25396825.4f;
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD4.getUnlocalizedName())) {
 							runningCostAcc += 4.0f;
-							fluidCapacityAcc += 64000000.0f;
+							fluidCapacityAcc += 50793650.8f;
+						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
+								.equals(STORAGE_FIELD5.getUnlocalizedName())) {
+							runningCostAcc += 8.0f;
+							fluidCapacityAcc += 101587301.6f;
 						} else {
 							formationChecklist = false;
 						}
