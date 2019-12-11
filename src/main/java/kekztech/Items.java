@@ -1,4 +1,4 @@
-package kekztech;
+/*тpackage kekztech;
 
 import cpw.mods.fml.common.Loader;
 import items.MetaItem_CraftingComponent;
@@ -7,9 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import util.Util;
 
-import java.util.Arrays;
+import java.util.Arrays;*/
 
-public enum Items {
+/*public enum Items {
 	// Heat Vents
 	T1HeatVent(0,0), T2HeatVent(1,0), T3HeatVent(2,0), T4HeatVent(3,0),
 	T1ComponentHeatVent(4,0), T2ComponentHeatVent(5,0), T3ComponentHeatVent(6,0), T4ComponentHeatVent(7,0), 
@@ -44,7 +44,7 @@ public enum Items {
 	// Error Item
 	Error(0,1);
 	
-	static {
+	/*static {
 			YttriaDust.setOreDictName("dustYttriumOxide");
 			ZirconiaDust.setOreDictName("dustCubicZirconia");
 	}
@@ -90,3 +90,4 @@ public enum Items {
 		OreDictName = oreDictName;
 	}
 }
+*/

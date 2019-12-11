@@ -1,4 +1,4 @@
-package reactor.items;
+/*package reactor.items;
 
 import items.MetaItem_CraftingComponent;
 import items.MetaItem_ReactorComponent;
@@ -58,3 +58,4 @@ public class HeatExchanger {
 	};
 	
 }
+*/

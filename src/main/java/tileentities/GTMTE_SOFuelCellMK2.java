@@ -66,7 +66,7 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 				.beginStructureBlock(3, 3, 5)
 				.addController("Front Center")
 				.addDynamoHatch("Back Center")
-				.addOtherStructurePart("GDC Ceramic Electrolyte Unit", "3x, Center 1x1x3")
+				.addOtherStructurePart("YAG Ceramic Unit", "3x, Center 1x1x3")
 				.addOtherStructurePart("Reinforced Glass", "6x, touching the electrolyte units on the horizontal sides")
 				.addCasingInfo("Robust Tungstensteel Machine Casing", 12)
 				.addMaintenanceHatch("Instead of any casing")

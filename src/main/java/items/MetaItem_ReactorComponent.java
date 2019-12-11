@@ -1,4 +1,4 @@
-package items;
+/*package items;
 
 import java.util.List;
 
@@ -14,13 +14,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
-import reactor.items.CoolantCell;
+/*import reactor.items.CoolantCell;
 import reactor.items.FuelRod;
 import reactor.items.HeatExchanger;
 import reactor.items.HeatVent;
-import reactor.items.NeutronReflector;
+import reactor.items.NeutronReflector;*/
 
-public class MetaItem_ReactorComponent extends Item {
+/*public class MetaItem_ReactorComponent extends Item {
 	
 	private static MetaItem_ReactorComponent instance = new MetaItem_ReactorComponent();
 	private final IIcon[] icons = new IIcon[50];
@@ -146,3 +146,4 @@ public class MetaItem_ReactorComponent extends Item {
 	
 	
 }
+*/

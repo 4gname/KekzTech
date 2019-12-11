@@ -1,9 +1,9 @@
 package kekztech;
 
-import blocks.Block_ControlRod;
+//import blocks.Block_ControlRod;
 import blocks.Block_GDCUnit;
-import blocks.Block_ReactorChamber_OFF;
-import blocks.Block_ReactorChamber_ON;
+//import blocks.Block_ReactorChamber_OFF;
+//import blocks.Block_ReactorChamber_ON;
 import blocks.Block_TFFTCasing;
 import blocks.Block_TFFTMultiHatch;
 import blocks.Block_TFFTStorageFieldBlockT1;
@@ -29,34 +29,33 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.api.util.GT_Utility;
 import items.ErrorItem;
-import items.MetaItem_CraftingComponent;
-import items.MetaItem_ReactorComponent;
+//import items.MetaItem_CraftingComponent;
+//import items.MetaItem_ReactorComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import tileentities.GTMTE_FluidMultiStorage;
-import tileentities.GTMTE_ModularNuclearReactor;
+//import tileentities.GTMTE_ModularNuclearReactor;
 import tileentities.GTMTE_SOFuelCellMK1;
 import tileentities.GTMTE_SOFuelCellMK2;
 import tileentities.TE_TFFTMultiHatch;
 import util.Util;
 
+
 /**
  * My GT-Meta-IDs are: 13101 - 13500
- * 
- * @author kekzdealer
- *
  */
+
 @Mod(modid = KekzCore.MODID, name = KekzCore.NAME, version = KekzCore.VERSION, 
 		dependencies =
 			  "required-after:IC2; "
 			+ "required-after:gregtech;"
-			+ "after:bartworks"
+			+ "after:bartworks;"
 		)
 public class KekzCore {
 	
-	public static final String NAME = "KekzTech";
+	public static final String NAME = "GW++ KekzTech";
 	public static final String MODID = "kekztech";
-	public static final String VERSION = "0.0.1";
+	public static final String VERSION = "0.1";
 	
 	@Mod.Instance("kekztech")
 	public static KekzCore instance;
@@ -64,16 +63,16 @@ public class KekzCore {
 	private GTMTE_SOFuelCellMK1 sofc1;
 	private GTMTE_SOFuelCellMK2 sofc2;
 	@SuppressWarnings("unused")
-	private GTMTE_ModularNuclearReactor mdr;
+	//private GTMTE_ModularNuclearReactor mdr;
 	private GTMTE_FluidMultiStorage fms;
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		// Items
 		ErrorItem.getInstance().registerItem();
-		MetaItem_ReactorComponent.getInstance().registerItem();
-		MetaItem_CraftingComponent.getInstance().registerItem();
-		Items.registerOreDictNames();
+		//MetaItem_ReactorComponent.getInstance().registerItem();
+		//MetaItem_CraftingComponent.getInstance().registerItem();
+		//Items.registerOreDictNames();
 		// Blocks
 		Block_YSZUnit.getInstance().registerBlock();
 		Block_GDCUnit.getInstance().registerBlock();
@@ -87,9 +86,9 @@ public class KekzCore {
 		Block_TFFTStorageFieldBlockT7.getInstance().registerBlock();
 		Block_TFFTStorageFieldBlockT8.getInstance().registerBlock();
 		Block_TFFTMultiHatch.getInstance().registerBlock();
-		Block_ReactorChamber_OFF.getInstance().registerBlock();
-		Block_ReactorChamber_ON.getInstance().registerBlock();
-		Block_ControlRod.getInstance().registerBlock();
+		//Block_ReactorChamber_OFF.getInstance().registerBlock();
+		//Block_ReactorChamber_ON.getInstance().registerBlock();
+		//Block_ControlRod.getInstance().registerBlock();
 		// Register TileEntities
 		GameRegistry.registerTileEntity(TE_TFFTMultiHatch.class, "kekztech_tfftmultihatch_tile");
 	}
@@ -99,7 +98,7 @@ public class KekzCore {
 		// Multiblock controllers
 		sofc1 = new GTMTE_SOFuelCellMK1(13101, "multimachine.fuelcellmk1", "Solid-Oxide Fuel Cell Mk I");
 		sofc2 = new GTMTE_SOFuelCellMK2(13102, "multimachine.fuelcellmk2", "Solid-Oxide Fuel Cell Mk II");
-		mdr = new GTMTE_ModularNuclearReactor(13103, "multimachine.nuclearreactor", "Nuclear Reactor");
+		//mdr = new GTMTE_ModularNuclearReactor(13103, "multimachine.nuclearreactor", "Nuclear Reactor");
 		fms = new GTMTE_FluidMultiStorage(13104, "multimachine.tf_fluidtank", "Multi-Tank");
 	}
 	
@@ -107,8 +106,8 @@ public class KekzCore {
 	public void postInit(FMLPostInitializationEvent event) {
 		System.out.println("Registering KekzTech recipes...");
 		
-		final MetaItem_CraftingComponent craftingItem = MetaItem_CraftingComponent.getInstance();
-		final MetaItem_ReactorComponent reactorItem = MetaItem_ReactorComponent.getInstance();
+	//	final MetaItem_CraftingComponent craftingItem = MetaItem_CraftingComponent.getInstance();
+		//final MetaItem_ReactorComponent reactorItem = MetaItem_ReactorComponent.getInstance();
 
 		// Multiblock Controllers
 		final Object[] mk1_recipe = {
@@ -144,7 +143,7 @@ public class KekzCore {
 		// Ceramic Electrolyte Units
 		final ItemStack[] yszUnit = {
 				GT_Utility.getIntegratedCircuit(6),
-				craftingItem.getStackOfAmountFromDamage(Items.YSZCeramicPlate.getMetaID(), 4),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Yttrium, 4),
 				GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Yttrium, 1),
 				GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.StainlessSteel, 1),
 				ItemList.Electric_Motor_HV.get(1L),
@@ -156,8 +155,9 @@ public class KekzCore {
 				1200, 480);
 		final ItemStack[] gdcUnit = {
 				GT_Utility.getIntegratedCircuit(6),
-				craftingItem.getStackOfAmountFromDamage(Items.GDCCeramicPlate.getMetaID(), 8),
-				GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Gadolinium, new ItemStack(ErrorItem.getInstance(), 1), 1),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Yttrium, 4),
+				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4),
+				GT_OreDictUnificator.get(OrePrefixes.frameGt, Materials.Aluminium, new ItemStack(ErrorItem.getInstance(), 1), 1),
 				GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Desh, new ItemStack(ErrorItem.getInstance(), 1), 1),
 				ItemList.Electric_Motor_IV.get(1L),
 		};
@@ -297,7 +297,7 @@ public class KekzCore {
 //  -  -  -  -  Reactor  -  -  -  -  //
 
 // Reactor structure blocks
-		final ItemStack[] controlrod = {
+		/*final ItemStack[] controlrod = {
 				GT_Utility.getIntegratedCircuit(6),
 				GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Lead, 1),
 				GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Steel, 4),
@@ -319,10 +319,10 @@ public class KekzCore {
 				reactorchamber, 
 				FluidRegistry.getFluidStack("wet.concrete", 144),
 				new ItemStack(Block_ReactorChamber_OFF.getInstance(), 1), 
-				1600, 480);
+				1600, 480);*/
 		
 		// Ceramic plates
-		GT_Values.RA.addAlloySmelterRecipe(
+		/*GT_Values.RA.addAlloySmelterRecipe(
 				craftingItem.getStackOfAmountFromDamage(Items.YSZCeramicDust.getMetaID(), Loader.isModLoaded("bartworks") ? 3 : 10), 
 				ItemList.Shape_Mold_Plate.get(1),
 				craftingItem.getStackOfAmountFromDamage(Items.YSZCeramicPlate.getMetaID(), 1), 
@@ -331,10 +331,10 @@ public class KekzCore {
 				craftingItem.getStackOfAmountFromDamage(Items.GDCCeramicDust.getMetaID(), 10), 
 				ItemList.Shape_Mold_Plate.get(1),
 				craftingItem.getStackOfAmountFromDamage(Items.GDCCeramicPlate.getMetaID(), 1), 
-				800, 480);
+				800, 480);*/
 		
 		// Dusts
-		GT_Values.RA.addMixerRecipe(Materials.Boron.getDust(1),	Materials.Arsenic.getDust(1), GT_Utility.getIntegratedCircuit(6), null, 
+		/*GT_Values.RA.addMixerRecipe(Materials.Boron.getDust(1),	Materials.Arsenic.getDust(1), GT_Utility.getIntegratedCircuit(6), null,
 				null, null, craftingItem.getStackOfAmountFromDamage(Items.BoronArsenideDust.getMetaID(), 2), 
 				100, 1920);
 		GT_Values.RA.addChemicalRecipe(
@@ -377,10 +377,10 @@ public class KekzCore {
 				craftingItem.getStackOfAmountFromDamage(Items.CeriaDust.getMetaID(), 9),
 				GT_Utility.getIntegratedCircuit(6), null, null, null,
 				craftingItem.getStackOfAmountFromDamage(Items.GDCCeramicDust.getMetaID(), 10), 
-				400, 1920);
+				400, 1920);*/
 		
 		// Crystals
-		GT_Values.RA.addAutoclaveRecipe(
+		/*GT_Values.RA.addAutoclaveRecipe(
 				craftingItem.getStackOfAmountFromDamage(Items.IsotopicallyPureDiamondDust.getMetaID(), 4), 
 				Materials.CarbonDioxide.getGas(16000), 
 				craftingItem.getStackOfAmountFromDamage(Items.IsotopicallyPureDiamondCrystal.getMetaID(), 1), 10000, 2400, 7680);
@@ -388,9 +388,9 @@ public class KekzCore {
 				craftingItem.getStackOfAmountFromDamage(Items.IsotopicallyPureDiamondDust.getMetaID(), 4), 
 				Materials.CarbonDioxide.getGas(16000), 
 				craftingItem.getStackOfAmountFromDamage(Items.IsotopicallyPureDiamondCrystal.getMetaID(), 1), 10000, 2400, 1920);
-		
+		*/
 		// Heat Pipes
-		GT_Values.RA.addLatheRecipe(
+		/*GT_Values.RA.addLatheRecipe(
 				GT_OreDictUnificator.get(OrePrefixes.stick, Materials.AnnealedCopper, 1),  
 				craftingItem.getStackFromDamage(Items.CopperHeatPipe.getMetaID()),
 				null, 120, 120);
@@ -405,10 +405,10 @@ public class KekzCore {
 		GT_Values.RA.addLatheRecipe(
 				craftingItem.getStackOfAmountFromDamage(Items.IsotopicallyPureDiamondCrystal.getMetaID(), 4),  
 				craftingItem.getStackFromDamage(Items.DiamondHeatPipe.getMetaID()),
-				null, 1200, 7680);
+				null, 1200, 7680);*/
 		
 		// Heat Vents
-		final ItemStack[] t1HeatVent = {
+		/*final ItemStack[] t1HeatVent = {
 				craftingItem.getStackOfAmountFromDamage(Items.CopperHeatPipe.getMetaID(), 2),
 				ItemList.Electric_Motor_MV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.rotor, Materials.Steel, new ItemStack(ErrorItem.getInstance(), 1), 1),
@@ -416,8 +416,8 @@ public class KekzCore {
 				GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Steel, new ItemStack(ErrorItem.getInstance(), 1), 8),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Good, 1),
 				GT_Utility.getIntegratedCircuit(6)
-		};
-		GT_Values.RA.addAssemblerRecipe(
+		};*/
+		/*GT_Values.RA.addAssemblerRecipe(
 				t1HeatVent, 
 				FluidRegistry.getFluidStack("molten.copper", 144),
 				reactorItem.getStackFromDamage(Items.T1HeatVent.getMetaID()),
@@ -430,8 +430,8 @@ public class KekzCore {
 				GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Aluminium, new ItemStack(ErrorItem.getInstance(), 1), 8),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Advanced, 1),
 				GT_Utility.getIntegratedCircuit(6)
-		};
-		GT_Values.RA.addAssemblerRecipe(
+		};*/
+		/*GT_Values.RA.addAssemblerRecipe(
 				t2HeatVent, 
 				FluidRegistry.getFluidStack("molten.silver", 144),
 				reactorItem.getStackFromDamage(Items.T2HeatVent.getMetaID()),
@@ -444,12 +444,12 @@ public class KekzCore {
 				GT_OreDictUnificator.get(OrePrefixes.screw, Materials.Tungsten, new ItemStack(ErrorItem.getInstance(), 1), 8),
 				GT_OreDictUnificator.get(OrePrefixes.circuit, Materials.Data, 1),
 				GT_Utility.getIntegratedCircuit(6)
-		};
-		GT_Values.RA.addAssemblerRecipe(
+		};*/
+		/*GT_Values.RA.addAssemblerRecipe(
 				t3HeatVent, 
 				FluidRegistry.getFluidStack("molten.gallium", 576),
 				reactorItem.getStackFromDamage(Items.T3HeatVent.getMetaID()),
-				800, 7680);
+				800, 7680);*/
 		
 		System.out.println("...done");
 	}

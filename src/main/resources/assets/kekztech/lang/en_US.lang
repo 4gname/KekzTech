@@ -66,19 +66,19 @@ item.kekztech_crafting_item.6.name=Amine Carbamate Dust
 item.kekztech_crafting_item.7.name=Boron Arsenide Crystal
 item.kekztech_crafting_item.8.name=Isotopically Pure Diamond Crystal
 item.kekztech_crafting_item.9.name=YSZ Ceramic Dust
-item.kekztech_crafting_item.10.name=GDC Ceramic Dust
+item.kekztech_crafting_item.10.name=YAG Ceramic Dust
 item.kekztech_crafting_item.11.name=Yttria Dust
 item.kekztech_crafting_item.12.name=Zirconia Dust
 item.kekztech_crafting_item.13.name=Ceria Dust
 item.kekztech_crafting_item.14.name=YSZ Ceramic Plate
-item.kekztech_crafting_item.15.name=GDC Ceramic Plate
+item.kekztech_crafting_item.15.name=YAG Ceramic Plate
 
-tile.kekztech_gdcceramicelectrolyteunit_block.name=GDC Ceramic Electrolyte Unit
-tile.kekztech_yszceramicelectrolyteunit_block.name=YSZ Ceramic Electrolyte Unit
+tile.kekztech_gdcceramicelectrolyteunit_block.name=YAG Ceramic Unit
+tile.kekztech_yszceramicelectrolyteunit_block.name=YO2 Ceramic Unit
 
 tile.kekztech_tfftcasingblock_block.name=Multi-Tank Casing
 tile.kekztech_tfftstoragefieldblock1_block.name=Multi-Tank Storage Field Block (Tier 1)
-tile.kekztech_tfftstoragefieldblock2_block.name=Multi-Tank torage Field Block (Tier 2)
+tile.kekztech_tfftstoragefieldblock2_block.name=Multi-Tank Storage Field Block (Tier 2)
 tile.kekztech_tfftstoragefieldblock3_block.name=Multi-Tank Storage Field Block (Tier 3)
 tile.kekztech_tfftstoragefieldblock4_block.name=Multi-Tank Storage Field Block (Tier 4)
 tile.kekztech_tfftstoragefieldblock5_block.name=Multi-Tank Storage Field Block (Tier 5)

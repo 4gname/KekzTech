@@ -1,4 +1,4 @@
-package reactor.items;
+/*package reactor.items;
 
 import items.MetaItem_ReactorComponent;
 import kekztech.GTRecipe;
@@ -112,3 +112,4 @@ public class FuelRod {
 	};
 	
 }
+*/
