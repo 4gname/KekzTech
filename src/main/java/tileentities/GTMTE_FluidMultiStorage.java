@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
+import gregtech.api.GregTech_API;
 import org.lwjgl.input.Keyboard;
 
-import blocks.Block_TFFTCasing;
 import blocks.Block_TFFTMultiHatch;
 import blocks.Block_TFFTStorageFieldBlockT1;
 import blocks.Block_TFFTStorageFieldBlockT2;
@@ -41,9 +41,10 @@ import util.Vector3ic;
 
 public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 	
-	private final String glassNameAE2 = "tile.appliedenergistics2.BlockQuartzGlass";
-	private final String glassNameStained = "tile.stainedGlass";
-	private final Block CASING = Block_TFFTCasing.getInstance();
+	private final String glassBW0 = "BW_GlasBlocks";
+	private final String glassBW1 = "BW_GlasBlocks:1";
+	private final String glassIC2 = "blockAlloyGlass";
+	private final Block CASING = GregTech_API.sBlockCasings8;
 	private final Block STORAGE_FIELD1 = Block_TFFTStorageFieldBlockT1.getInstance();
 	private final Block STORAGE_FIELD2 = Block_TFFTStorageFieldBlockT2.getInstance();
 	private final Block STORAGE_FIELD3 = Block_TFFTStorageFieldBlockT3.getInstance();
@@ -90,9 +91,9 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 				.addController("Top Center")
 				.addEnergyHatch("Any top or bottom casing")
 				.addOtherStructurePart("Inner 3x7x3 tube", "Storage Field Blocks")
-				.addOtherStructurePart("Outer 5x7x5 glass shell", "AE2 Quartz Glass of Vanilla Stained Glass")
+				.addOtherStructurePart("Outer 5x7x5 glass shell", "Reinforced Glass of BartWorks Glass")
 				.addIOHatches("Instead of any casing or glass, have to touch storage field")
-				.signAndFinalize("Kekzdealer");
+				.signAndFinalize(": "+EnumChatFormatting.YELLOW+"Kekzdealer");
 		if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
 			return b.getInformation();
 		} else {
@@ -349,7 +350,6 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD4.getUnlocalizedName())) {
 							runningCostAcc += 4.0f;
-
 							fluidCapacityAcc += 50793650.7f;
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD5.getUnlocalizedName())) {
@@ -369,7 +369,7 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD8.getUnlocalizedName())) {
 							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 812698412.6f;
+							fluidCapacityAcc += 812698412.65479f;
 
 						} else {
 							formationChecklist = false;
@@ -383,8 +383,9 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 					
 					// Corner allows only glass or casings
 					if(X == -2 && Y == -2 || X == 2 && Y == 2 || X == -2 && Y == 2 || X == 2 && Y == -2) {
-						if(!(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassNameAE2)
-								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassNameStained)
+						if(!(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassBW0)
+								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassBW1)
+								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassIC2)
 								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()) == CASING)) {							
 							formationChecklist = false; // do nothing yet
 						}
@@ -406,8 +407,9 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 												thisController.getYCoord() + offset.y(),
 												thisController.getZCoord() + offset.z());
 								multiHatches.add(mh);
-							} else if (thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassNameAE2)
-								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassNameStained)) {
+							} else if (thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassBW0)
+								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassBW1)
+								|| thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName().equals(glassIC2)) {
 								// do nothing lol
 							} else {
 								formationChecklist = false;

@@ -143,7 +143,7 @@ public class MultiBlockTooltipBuilder {
 	 */
 	public void signAndFinalize(String author) {
 		iLines.add("Hold " + EnumChatFormatting.BOLD + "[LSHIFT]" + EnumChatFormatting.RESET + EnumChatFormatting.GRAY + " to display structure guidelines");
-		iLines.add("Created by " + author);
+		iLines.add("Added by " + author);
 		iArray = new String[iLines.size()];
 		sArray = new String[sLines.size()];
 		iLines.toArray(iArray);

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import org.lwjgl.input.Keyboard;
 
 import blocks.Block_GDCUnit;
@@ -36,8 +39,10 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 	final int CASING_TEXTURE_ID = 48;
 	
 	private final int OXYGEN_PER_TICK = 100;
-	private final int EU_PER_TICK = 24576; // 100% Efficiency, 3A IV
-	private final int STEAM_PER_TICK = 4800; // SH Steam (10,800EU/t @ 150% Efficiency) 
+	private final int EU_PER_TICK = 15680;
+	private final int STEAM_PER_TICK = 4800;
+
+	protected int fuelConsumption = 0;
 	
 	public GTMTE_SOFuelCellMK2(int aID, String aName, String aNameRegional) {
 		super(aID, aName, aNameRegional);
@@ -58,20 +63,20 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 	public String[] getDescription() {
 		final MultiBlockTooltipBuilder b = new MultiBlockTooltipBuilder();
 		b.addInfo("Oxidizes gas fuels to generate electricity without polluting the environment")
-				.addInfo("Consumes 442,200EU worth of fuel with up to 97% efficiency each second")
+				.addInfo("Consumes fuel with up to 97% efficiency each second")
 				.addInfo("Steam production requires the SOFC to heat up completely first")
-				.addInfo("Outputs " + EU_PER_TICK + "EU/t and " + STEAM_PER_TICK + "L/t Steam")
+				.addInfo("Outputs " + EU_PER_TICK + "EU/t and " + STEAM_PER_TICK + "L/t SH Steam")
 				.addInfo("Additionally requires " + OXYGEN_PER_TICK + "L/t Oxygen gas")
 				.addSeparator()
 				.beginStructureBlock(3, 3, 5)
 				.addController("Front Center")
 				.addDynamoHatch("Back Center")
-				.addOtherStructurePart("YAG Ceramic Unit", "3x, Center 1x1x3")
+				.addOtherStructurePart("LSCF Ceramic Unit", "3x, Center 1x1x3")
 				.addOtherStructurePart("Reinforced Glass", "6x, touching the electrolyte units on the horizontal sides")
 				.addCasingInfo("Robust Tungstensteel Machine Casing", 12)
 				.addMaintenanceHatch("Instead of any casing")
 				.addIOHatches("Instead of any casing")
-				.signAndFinalize("Kekzdealer");
+				.signAndFinalize(": "+EnumChatFormatting.YELLOW+"Kekzdealer");
 		if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
 			return b.getInformation();
 		} else {
@@ -118,8 +123,8 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 					FluidStack liquid;
 					if((liquid = GT_Utility.getFluidForFilledItem(aFuel.getRepresentativeInput(0), true)) != null
 							&& hatchFluid.isFluidEqual(liquid)) {
-						
-						liquid.amount = EU_PER_TICK / aFuel.mSpecialValue;
+
+						fuelConsumption = liquid.amount = EU_PER_TICK / aFuel.mSpecialValue;
 						
 						if(super.depleteInput(liquid)) {
 							
@@ -312,7 +317,32 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 		
 		return formationChecklist;
 	}
-	
+
+	public String[] getInfoData() {
+
+		return new String[]{
+/* 1 line */	"Solid-Oxide Generator MK III" + EnumChatFormatting.RESET,
+/* 2 line */	StatCollector.translateToLocal("GT5U.engine.output") + ": "
+				+ EnumChatFormatting.GREEN + this.mEUt * this.mEfficiency / 10000
+				+ EnumChatFormatting.RESET + " EU/t",
+/* 3 line */	StatCollector.translateToLocal("GT5U.engine.efficiency") + ": "
+				+ EnumChatFormatting.YELLOW + (float)this.mEfficiency / 100.0F
+				+ EnumChatFormatting.YELLOW + " %",
+/* 4 line */	"Output Steam: " + (((float)this.mEfficiency / 100.0F == 100)
+				? EnumChatFormatting.GREEN + "" +STEAM_PER_TICK + EnumChatFormatting.RESET + " L/t"
+				: EnumChatFormatting.GREEN + "0" + EnumChatFormatting.RESET + " L/t"),
+/* 5 line */	"Maintenance: " + ((super.getRepairStatus() == super.getIdealStatus())
+				? EnumChatFormatting.GREEN + "No Problems" + EnumChatFormatting.RESET
+				: EnumChatFormatting.RED + "Has Problems" + EnumChatFormatting.RESET),
+/* 6 line */	"Fuel supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
+				? EnumChatFormatting.RED + "" + fuelConsumption + EnumChatFormatting.RESET + " L/t"
+				: EnumChatFormatting.RED + "0" + EnumChatFormatting.RESET + " L/t"),
+/* 7 line */	"Oxygen supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
+				? EnumChatFormatting.RED + "" + OXYGEN_PER_TICK + EnumChatFormatting.RESET + " L/t"
+				: EnumChatFormatting.RED + "0" + EnumChatFormatting.RESET + " L/t")
+		};
+	}
+
 	@Override
 	public int getMaxEfficiency(ItemStack stack) {
 		return 10000;
@@ -334,3 +364,6 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 	}
 	
 }
+
+
+
