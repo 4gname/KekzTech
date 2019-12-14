@@ -125,13 +125,23 @@ public class KekzCore {
 	//SOFuelCellMK1
 		final Object[] mk1_recipe = {
 				"CCC", "PHP", "FBL",
-				'C', OrePrefixes.circuit.get(Materials.Advanced),
+				'C', OrePrefixes.circuit.get(Materials.Data),
 				'P', ItemList.Electric_Pump_HV.get(1L),
 				'H', ItemList.Hull_HV.get(1L),
-				'F', GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.StainlessSteel, 1),
+				'F', GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Titanium, 1),
 				'B', GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.Gold, 1),
-				'L', GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.StainlessSteel, 1)};
+				'L', GT_OreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Titanium, 1)};
 		GT_ModHandler.addCraftingRecipe(sofc1.getStackForm(1), mk1_recipe);
+	//SOFuelCellMK2
+		final Object[] mk2_recipe = {
+				"CCC", "PHP", "FBL",
+				'C', OrePrefixes.circuit.get(Materials.Elite),
+				'P', ItemList.Electric_Pump_EV.get(1L),
+				'H', ItemList.Hull_EV.get(1L),
+				'F', GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.TungstenSteel, 1),
+				'B', Util.getStackofAmountFromOreDict("wireGt04SuperconductorEV", 1),
+				'L', GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.TungstenSteel, 1)};
+		GT_ModHandler.addCraftingRecipe(sofc2.getStackForm(1), mk2_recipe);
 	//SOFuelCellMK3
 		final Object[] mk3_recipe = {
 				"CCC", "PHP", "FBL",
@@ -139,19 +149,10 @@ public class KekzCore {
 				'P', ItemList.Electric_Pump_IV.get(1L),
 				'H', ItemList.Hull_IV.get(1L),
 				'F', GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Ultimate, 1),
-				'B', Util.getStackofAmountFromOreDict("wireGt04SuperconductorEV", 1),
+				'B', Util.getStackofAmountFromOreDict("wireGt04SuperconductorIV", 1),
 				'L', GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 1)};
 		GT_ModHandler.addCraftingRecipe(sofc3.getStackForm(1), mk3_recipe);
-	//SOFuelCellMK2
-		final Object[] mk2_recipe = {
-				"CCC", "PHP", "FBL",
-				'C', OrePrefixes.circuit.get(Materials.Master),
-				'P', ItemList.Electric_Pump_IV.get(1L),
-				'H', ItemList.Hull_IV.get(1L),
-				'F', GT_OreDictUnificator.get(OrePrefixes.pipeSmall, Materials.Ultimate, 1),
-				'B', Util.getStackofAmountFromOreDict("wireGt04SuperconductorEV", 1),
-				'L', GT_OreDictUnificator.get(OrePrefixes.pipeMedium, Materials.Ultimate, 1)};
-		GT_ModHandler.addCraftingRecipe(sofc2.getStackForm(1), mk2_recipe);
+
 	//MultiTank
 		final Object[] tfft_recipe = {
 				"HFH", "PVP", "CFC",
