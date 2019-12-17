@@ -7,7 +7,7 @@ Mod adds Solid Oxide Fuel Cells to turn gas fuels into electricity and steam, a 
 Wiki for mod: [wiki](https://github.com/4gname/KekzTech/wiki)
 
 Solid Oxide Fuel Cell MK1 and MK2:
-![picture of Solid Oxied Fuel Cells, tier 1, 2 and 3](https://imgur.com/a/ywkHSYw)
+![picture of Solid Oxied Fuel Cells, tier 1, 2 and 3](https://ibb.co/pwbvcmB)
 
 Multi Tank:
-![picture of multi tank](https://imgur.com/a/POJe40A)
+![picture of multi tank](https://ibb.co/ZJ2KdTw)
