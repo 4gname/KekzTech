@@ -1,8 +1,6 @@
 package tileentities;
 
-import java.util.List;
-
-import kekztech.MultiFluidHandler;
+import kekztech.MultiFluidHandler2;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -11,11 +9,13 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTankInfo;
 import net.minecraftforge.fluids.IFluidHandler;
 
-public class TE_TFFTMultiHatch extends TileEntity implements IFluidHandler {
+import java.util.List;
+
+public class TE_TFFTMultiHatch2 extends TileEntity implements IFluidHandler {
 	
-	private MultiFluidHandler mfh;
+	private MultiFluidHandler2 mfh;
 	
-	public void setMultiFluidHandler(MultiFluidHandler mfh) {
+	public void setMultiFluidHandler2(MultiFluidHandler2 mfh) {
 		this.mfh = mfh;
 	}
 

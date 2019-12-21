@@ -16,7 +16,7 @@ public class IB_TFFTMultiHatch extends ItemBlock {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List lines, boolean advancedTooltips) {
-		lines.add("Special hatch for the T.F.F.T");
+		lines.add("Special hatch for the Multi-Tank");
 		lines.add("Allows for automated interaction with all stored fluids in a single place");
 	}
 }

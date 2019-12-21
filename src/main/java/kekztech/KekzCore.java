@@ -40,7 +40,7 @@ public class KekzCore {
 	
 	public static final String NAME = "GW++ KekzTech";
 	public static final String MODID = "kekztech";
-	public static final String VERSION = "0.1";
+	public static final String VERSION = "0.2";
 	
 	@Mod.Instance("kekztech")
 	public static KekzCore instance;
@@ -52,6 +52,7 @@ public class KekzCore {
 
 	// Tank
 	private GTMTE_FluidMultiStorage fms;
+    private GTMTE_FluidMultiStorage2 fms2;
 
 	@Mod.EventHandler //Register
 	public void preInit(FMLPreInitializationEvent event) {
@@ -86,8 +87,10 @@ public class KekzCore {
 			Block_TFFTStorageFieldBlockT7.getInstance().registerBlock();
 			Block_TFFTStorageFieldBlockT8.getInstance().registerBlock();
 			Block_TFFTMultiHatch.getInstance().registerBlock();
+			Block_TFFTMultiHatch2.getInstance().registerBlock();
 	// Register TileEntities
-			GameRegistry.registerTileEntity(TE_TFFTMultiHatch.class, "kekztech_tfftmultihatch_tile");
+			GameRegistry.registerTileEntity(TE_TFFTMultiHatch.class, "kekztech_multihatch_tile");
+			GameRegistry.registerTileEntity(TE_TFFTMultiHatch2.class, "kekztech_singlehatch_tile");
 	// OreDict
 		//Dust
 			OreDictionary.registerOre("dustCubicZirconia", dustYSZ.getInstance());
@@ -115,7 +118,9 @@ public class KekzCore {
 		sofc1 = new GTMTE_SOFuelCellMK1(13101, "multimachine.fuelcellmk1", "Solid-Oxide Generator Mk I");
 		sofc2 = new GTMTE_SOFuelCellMK3(13102, "multimachine.fuelcellmk2", "Solid-Oxide Generator Mk II");
 		sofc3 = new GTMTE_SOFuelCellMK2(13103, "multimachine.fuelcellmk3", "Solid-Oxide Generator Mk III");
-		fms = new GTMTE_FluidMultiStorage(13104, "multimachine.tf_fluidtank", "Multi-Tank");}
+		fms = new GTMTE_FluidMultiStorage(13104, "multimachine.tf_fluidtank", "Multi-Tank");
+        fms2 = new GTMTE_FluidMultiStorage2 (13105, "multimachine.tf_fluidtank1", "Single-Tank");
+}
 
 	@Mod.EventHandler //Register Recipes
 	public void postInit(FMLPostInitializationEvent event) {

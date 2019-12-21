@@ -483,6 +483,7 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 		
 		if(formationChecklist) {
 			runningCost = (int) Math.round(-runningCostAcc);
+
 			// Update MultiFluidHandler in case storage cells have been changed
 			final int capacityPerFluid = (int) Math.round(fluidCapacityAcc / 25.0f);
 			if(mfh == null) {
