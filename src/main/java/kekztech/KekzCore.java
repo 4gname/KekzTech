@@ -161,12 +161,22 @@ public class KekzCore {
 	//MultiTank
 		final Object[] tfft_recipe = {
 				"HFH", "PVP", "CFC",
-				'H', OrePrefixes.pipeMedium.get(Materials.StainlessSteel),
-				'F', ItemList.Field_Generator_LV.get(1L),
+				'H', OrePrefixes.pipeMedium.get(Materials.Titanium),
+				'F', ItemList.Field_Generator_MV.get(1L),
 				'P', ItemList.Electric_Pump_HV.get(1L),
 				'V', ItemList.Hull_HV.get(1L),
 				'C', OrePrefixes.circuit.get(Materials.Data)};
 		GT_ModHandler.addCraftingRecipe(fms.getStackForm(1), tfft_recipe);
+		//SingleTank
+		final Object[] singletank_recipe = {
+				"HFH", "PVP", "CFC",
+				'H', OrePrefixes.pipeMedium.get(Materials.StainlessSteel),
+				'F', ItemList.Field_Generator_LV.get(1L),
+				'P', ItemList.Electric_Pump_MV.get(1L),
+				'V', ItemList.Hull_MV.get(1L),
+				'C', OrePrefixes.circuit.get(Materials.Data)};
+		GT_ModHandler.addCraftingRecipe(fms2.getStackForm(1), singletank_recipe);
+
 
 // Ceramic Electrolyte Units
 	//YSZ Unit

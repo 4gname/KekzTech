@@ -26,7 +26,7 @@ public class Block_TFFTMultiHatch2 extends BlockContainer {
 		final String blockName = "kekztech_singlehatch_block";
 		super.setBlockName(blockName);
 		super.setCreativeTab(CreativeTabs.tabMisc);
-		super.setBlockTextureName(KekzCore.MODID + ":" + "SingleHatch");
+		super.setBlockTextureName(KekzCore.MODID + ":" + "TFFTSingleHatch");
 		super.setHardness(5.0f);
 		super.setResistance(6.0f);
 		GameRegistry.registerBlock(getInstance(), IB_TFFTMultiHatch2.class, blockName);

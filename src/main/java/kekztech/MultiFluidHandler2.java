@@ -116,7 +116,7 @@ public class MultiFluidHandler2 {
 			final int remcap = getCapacity();
 			final int fit = Math.min(remcap, push.amount);
 			if(doPush) {
-				fluids.add(new FluidStack(push.getFluid(), fit));	
+				fluids.add(new FluidStack(push.getFluid(), fit));
 			}
 			return fit;
 		} else {

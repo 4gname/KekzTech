@@ -93,6 +93,7 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 				.addOtherStructurePart("Inner 3x7x3 tube", "Storage Field Blocks")
 				.addOtherStructurePart("Outer 5x7x5 glass shell", "Reinforced Glass of BartWorks Glass")
 				.addIOHatches("Instead of any casing or glass, have to touch storage field")
+				.addInfo("M-T Multi-Fluid I/O Hatch for information and used EC2, OC systems")
 				.signAndFinalize(": "+EnumChatFormatting.YELLOW+"Kekzdealer");
 		if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
 			return b.getInformation();

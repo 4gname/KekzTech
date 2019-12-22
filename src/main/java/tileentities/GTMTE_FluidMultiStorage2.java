@@ -83,7 +83,8 @@ public class GTMTE_FluidMultiStorage2 extends GT_MetaTileEntity_MultiBlockBase {
 				.addOtherStructurePart("Inner 1x5x1 tube", "Storage Field Blocks")
 				.addOtherStructurePart("Outer 3x5x3 glass shell", "Reinforced Glass of BartWorks Glass")
 				.addIOHatches("Instead of any casing or glass, have to touch storage field")
-				.signAndFinalize(": "+EnumChatFormatting.YELLOW+"4gname");
+				.addInfo("S-T Fluid I/O Hatch for information and used EC2, OC systems")
+				.signAndFinalize(": "+EnumChatFormatting.YELLOW+"Kekzdealer and 4gname");
 		if(!Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
 			return b.getInformation();
 		} else {
@@ -324,42 +325,33 @@ public class GTMTE_FluidMultiStorage2 extends GT_MetaTileEntity_MultiBlockBase {
 					if(X == 0 && X == 0 && Y == 0 && Y == 0) {
 						if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD1.getUnlocalizedName())) {
-							runningCostAcc += 0.5f;
-							fluidCapacityAcc += 16000000f;
+							runningCostAcc += 1.0f;
+							fluidCapacityAcc += 16000000f; //80kk L
 
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD2.getUnlocalizedName())) {
-							runningCostAcc += 1.0f;
-							fluidCapacityAcc += 32000000f;
+							runningCostAcc += 2.0f;
+							fluidCapacityAcc += 32000000f; //160kk L
 
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD3.getUnlocalizedName())) {
-							runningCostAcc += 2.0f;
-							fluidCapacityAcc += 64000000f;
+							runningCostAcc += 4.0f;
+							fluidCapacityAcc += 64000000f; //320kk L
 
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD4.getUnlocalizedName())) {
-							runningCostAcc += 4.0f;
-							fluidCapacityAcc += 128000000f;
+							runningCostAcc += 8.0f;
+							fluidCapacityAcc += 128000000f; //640kk L
+
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD5.getUnlocalizedName())) {
-							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 256000000f;
+							runningCostAcc += 16.0f;
+							fluidCapacityAcc += 256000000f; //1.28kkk L
 
 						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
 								.equals(STORAGE_FIELD6.getUnlocalizedName())) {
-							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 512000000f;
-
-						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
-								.equals(STORAGE_FIELD7.getUnlocalizedName())) {
-							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 1024000000f;
-
-						} else if(thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
-								.equals(STORAGE_FIELD8.getUnlocalizedName())) {
-							runningCostAcc += 8.0f;
-							fluidCapacityAcc += 2048000000f;
+							runningCostAcc += 32.0f;
+							fluidCapacityAcc += 400000000f; //2kkk L
 
 						} else {
 							formationChecklist = false;
@@ -534,7 +526,7 @@ public class GTMTE_FluidMultiStorage2 extends GT_MetaTileEntity_MultiBlockBase {
 	@Override
 	public void loadNBTData(NBTTagCompound nbt) {
 		nbt = (nbt == null) ? new NBTTagCompound() : nbt;
-		
+
 		runningCost = nbt.getInteger("runningCost");
 		doVoidExcess = nbt.getBoolean("doVoidExcess");
 		

@@ -1,4 +1,5 @@
 item.kekztech_error_item.name=KekzTech Error Coin
+
 item.dustYSZ.name=YSZ Ceramic Dust
 item.dustGDC.name=GDC Ceramic Dust
 item.dustLSCF.name=LSCF Ceramic Dust
@@ -8,23 +9,30 @@ item.dustCe.name=Cerium Dust
 item.dustLa.name=Lanthanum Dust
 item.dustSr.name=Strontium Dust
 item.dustY.name=Yttrium Dust
+
 item.dustZrO2.name=Zirconium dioxide
 item.dustY2O3.name=Yttrium oxide
+
 item.ceramicYSZ.name=YSZ Ceramic
 item.ceramicGDC.name=GDC Ceramic
 item.ceramicLSCF.name=LSCF Ceramic
+
 item.plateYSZ.name=YSZ Ceramic Plate
 item.plateGDC.name=GDC Ceramic Plate
 item.plateLSCF.name=LSCF Ceramic Plate
+
 tile.kekztech_gdcceramicelectrolyteunit_block.name=GDC Ceramic Electrolyte Unit
 tile.kekztech_yszceramicelectrolyteunit_block.name=YSZ Ceramic Electrolyte Unit
 tile.kekztech_lanthanumstrontiumcobaltferrite_block.name=LSCF Ceramic Electrolyte Unit
-tile.kekztech_tfftstoragefieldblock1_block.name=Multi-Tank Storage Field Block (Tier 1)
-tile.kekztech_tfftstoragefieldblock2_block.name=Multi-Tank Storage Field Block (Tier 2)
-tile.kekztech_tfftstoragefieldblock3_block.name=Multi-Tank Storage Field Block (Tier 3)
-tile.kekztech_tfftstoragefieldblock4_block.name=Multi-Tank Storage Field Block (Tier 4)
-tile.kekztech_tfftstoragefieldblock5_block.name=Multi-Tank Storage Field Block (Tier 5)
-tile.kekztech_tfftstoragefieldblock6_block.name=Multi-Tank Storage Field Block (Tier 6)
-tile.kekztech_tfftstoragefieldblock7_block.name=Multi-Tank Storage Field Block (Tier 7)
-tile.kekztech_tfftstoragefieldblock8_block.name=Multi-Tank Storage Field Block (Tier 8)
+
+tile.kekztech_tfftstoragefieldblock1_block.name=Tank Storage Field Block (Tier 1)
+tile.kekztech_tfftstoragefieldblock2_block.name=Tank Storage Field Block (Tier 2)
+tile.kekztech_tfftstoragefieldblock3_block.name=Tank Storage Field Block (Tier 3)
+tile.kekztech_tfftstoragefieldblock4_block.name=Tank Storage Field Block (Tier 4)
+tile.kekztech_tfftstoragefieldblock5_block.name=Tank Storage Field Block (Tier 5)
+tile.kekztech_tfftstoragefieldblock6_block.name=Tank Storage Field Block (Tier 6)
+tile.kekztech_tfftstoragefieldblock7_block.name=Tank Storage Field Block (Tier 7)
+tile.kekztech_tfftstoragefieldblock8_block.name=Tank Storage Field Block (Tier 8)
+
 tile.kekztech_tfftmultihatch_block.name=M-T Multi-Fluid I/O Hatch
+tile.kekztech_singlehatch_block.name=S-T Fluid I/O Hatch
