@@ -19,9 +19,9 @@ apply plugin: 'forge'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = "0.1"
+version = "1.7.10-0.0.3-universal"
 group= "GWkekztech" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "GWkekztech"
+archivesBaseName = "Kekztech-4G-Edition"
 
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"

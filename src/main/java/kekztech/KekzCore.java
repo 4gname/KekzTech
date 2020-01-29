@@ -40,7 +40,7 @@ public class KekzCore {
 	
 	public static final String NAME = "GW++ KekzTech";
 	public static final String MODID = "kekztech";
-	public static final String VERSION = "0.2";
+	public static final String VERSION = "0.3";
 	
 	@Mod.Instance("kekztech")
 	public static KekzCore instance;
@@ -167,7 +167,7 @@ public class KekzCore {
 				'V', ItemList.Hull_HV.get(1L),
 				'C', OrePrefixes.circuit.get(Materials.Data)};
 		GT_ModHandler.addCraftingRecipe(fms.getStackForm(1), tfft_recipe);
-		//SingleTank
+	//SingleTank
 		final Object[] singletank_recipe = {
 				"HFH", "PVP", "CFC",
 				'H', OrePrefixes.pipeMedium.get(Materials.StainlessSteel),
@@ -224,17 +224,16 @@ public class KekzCore {
 	//Field Tier 1
 		final ItemStack[] tfftstoragefield1 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_LV.get(1L),
 				ItemList.Electric_Pump_MV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.StainlessSteel, 4)};
 		GT_Values.RA.addAssemblerRecipe(
-				tfftstoragefield1, FluidRegistry.getFluidStack("molten.epoxid", 144),
+				tfftstoragefield1, FluidRegistry.getFluidStack("molten.epoxid", 36),
 				new ItemStack(Block_TFFTStorageFieldBlockT1.getInstance(), 1),
 				200, 480);
 //Field Tier 2
 		final ItemStack[] tfftstoragefield2 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_MV.get(1L),
+				ItemList.Field_Generator_LV.get(1L),
 				ItemList.Electric_Pump_HV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Titanium, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -244,7 +243,7 @@ public class KekzCore {
 //Field Tier 3
 		final ItemStack[] tfftstoragefield3 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_HV.get(1L),
+				ItemList.Field_Generator_MV.get(1L),
 				ItemList.Electric_Pump_EV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.TungstenSteel, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -254,7 +253,7 @@ public class KekzCore {
 //Field Tier 4
 		final ItemStack[] tfftstoragefield4 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_EV.get(1L),
+				ItemList.Field_Generator_HV.get(1L),
 				ItemList.Electric_Pump_IV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Chrome, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -264,7 +263,7 @@ public class KekzCore {
 //Field Tier 5
         final ItemStack[] tfftstoragefield5 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_IV.get(1L),
+				ItemList.Field_Generator_EV.get(1L),
 				ItemList.Electric_Pump_LuV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Iridium, 4)};
         GT_Values.RA.addAssemblerRecipe(
@@ -275,7 +274,7 @@ public class KekzCore {
 //Field Tier 6
 		final ItemStack[] tfftstoragefield6 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_LuV.get(1L),
+				ItemList.Field_Generator_IV.get(1L),
 				ItemList.Electric_Pump_ZPM.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Osmium, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -285,7 +284,7 @@ public class KekzCore {
 //Field Tier 7
 		final ItemStack[] tfftstoragefield7 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_ZPM.get(1L),
+				ItemList.Field_Generator_LuV.get(1L),
 				ItemList.Electric_Pump_UV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Tritanium, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -295,7 +294,7 @@ public class KekzCore {
 //Field Tier 8
 		final ItemStack[] tfftstoragefield8 = {
 				GT_Utility.getIntegratedCircuit(6),
-				ItemList.Field_Generator_UV.get(1L),
+				ItemList.Field_Generator_ZPM.get(1L),
 				ItemList.Electric_Pump_UHV.get(1L),
 				GT_OreDictUnificator.get(OrePrefixes.plate, Materials.Neutronium, 4)};
 		GT_Values.RA.addAssemblerRecipe(
@@ -312,6 +311,16 @@ public class KekzCore {
 				'U', ItemList.Hatch_Input_EV.get(1L),
 				'F', ItemList.Electric_Pump_HV.get(1L)};
 		GT_ModHandler.addCraftingRecipe(new ItemStack(Block_TFFTMultiHatch.getInstance()), multi_hatch);
+
+// - - - Single Hatch - - - //
+
+		final Object[] single_hatch = {
+				"PRP", "UFU", "PRP",
+				'P', GT_OreDictUnificator.get(OrePrefixes.pipeHuge, Materials.StainlessSteel, 1),
+				'R', ItemList.Hatch_Output_HV.get(1L),
+				'U', ItemList.Hatch_Input_HV.get(1L),
+				'F', ItemList.Electric_Pump_MV.get(1L)};
+		GT_ModHandler.addCraftingRecipe(new ItemStack(Block_TFFTMultiHatch2.getInstance()), single_hatch);
 
 //  -  -  -  -  Dusts  -  -  -  -  //
 		// Rare Earth Processing - Strontium and Gadolinium

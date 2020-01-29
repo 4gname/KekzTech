@@ -39,8 +39,8 @@ public class GTMTE_SOFuelCellMK1  extends GT_MetaTileEntity_MultiBlockBase {
 	private final int CASING_META = 1;
 	private final int CASING_TEXTURE_ID = 49;
 	
-	private final int OXYGEN_PER_TICK = 20;
-	private final int EU_PER_TICK = 980;
+	private final int OXYGEN_PER_TICK = 50;
+	private final int EU_PER_TICK = 1680;
 	private final int STEAM_PER_TICK = 900;
 
 	protected int fuelConsumption = 0;

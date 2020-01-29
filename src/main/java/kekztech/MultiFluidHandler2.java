@@ -86,9 +86,9 @@ public class MultiFluidHandler2 {
 	
 	public ArrayList<String> getInfoData() {
 		final ArrayList<String> lines = new ArrayList<>(fluids.size());
-		lines.add(EnumChatFormatting.YELLOW + "Stored Fluids:" + EnumChatFormatting.RESET);
+		lines.add(EnumChatFormatting.YELLOW + "Stored Fluid:" + EnumChatFormatting.RESET);
 		for(int i = 0; i < fluids.size(); i++) {
-			lines.add(i + " - " + fluids.get(i).getLocalizedName() + ": " 
+			lines.add(fluids.get(i).getLocalizedName() + ": "
 					+ fluids.get(i).amount + "L (" 
 					+ (Math.round(100.0f * fluids.get(i).amount / getCapacity())) + "%)");
 		}
