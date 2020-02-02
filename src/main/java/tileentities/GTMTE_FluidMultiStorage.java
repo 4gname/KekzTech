@@ -91,6 +91,7 @@ public class GTMTE_FluidMultiStorage extends GT_MetaTileEntity_MultiBlockBase {
 				.addController("Top Center")
 				.addEnergyHatch("Any top or bottom casing")
 				.addOtherStructurePart("Inner 3x7x3 tube", "Storage Field Blocks")
+				.addOtherStructurePart("Outer 5x1&9x5 Casing", "Chemical Casing")
 				.addOtherStructurePart("Outer 5x7x5 glass shell", "Reinforced Glass of BartWorks Glass")
 				.addIOHatches("Instead of any casing or glass, have to touch storage field")
 				.addInfo("M-T Multi-Fluid I/O Hatch for information and used EC2, OC systems")
