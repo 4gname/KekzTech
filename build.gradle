@@ -2,16 +2,37 @@ buildscript {
     repositories {
         mavenCentral()
         maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
+            name = "gt"
+            url = "https://gregtech.overminddl1.com/"
+        }   
         maven {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            url = "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath "net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT"
+        classpath "gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.55"
+
+    }
+}
+
+apply plugin: 'eclipse'
+eclipse {
+    classpath {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+apply plugin: 'idea'
+idea{
+    module {
+        downloadJavadoc = true
+        downloadSources = true
     }
 }
 
@@ -19,7 +40,7 @@ apply plugin: 'forge'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = "1.7.10-0.0.3-universal"
+version = "1.7.10-0.0.4-universal"
 group= "GWkekztech" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Kekztech-4G-Edition"
 
