@@ -3,6 +3,7 @@ package kekztech;
 import blocks.*;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.ProgressManager;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -74,6 +75,8 @@ public class KekzCore {
 			plateYSZ.getInstance().registerItem();
 			plateGDC.getInstance().registerItem();
 			plateLSCF.getInstance().registerItem();
+
+
 	// Blocks
 			Block_YSZUnit.getInstance().registerBlock();
 			Block_GDCUnit.getInstance().registerBlock();
@@ -111,6 +114,18 @@ public class KekzCore {
 			OreDictionary.registerOre("plateYSZ", plateYSZ.getInstance());
 			OreDictionary.registerOre("plateGDC", plateGDC.getInstance());
 			OreDictionary.registerOre("plateLSCF", plateLSCF.getInstance());}
+
+	@Mod.EventHandler //Register GT
+	public void load(FMLInitializationEvent event){
+		Block_TFFTStorageFieldBlockT1.run();
+		Block_TFFTStorageFieldBlockT2.run();
+		Block_TFFTStorageFieldBlockT3.run();
+		Block_TFFTStorageFieldBlockT4.run();
+		Block_TFFTStorageFieldBlockT5.run();
+		Block_TFFTStorageFieldBlockT6.run();
+		Block_TFFTStorageFieldBlockT7.run();
+		Block_TFFTStorageFieldBlockT8.run();
+	}
 
 	@Mod.EventHandler //Register GT
 	public void init(FMLInitializationEvent event) {
