@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import blocks.Block_LSCFUnit;
 import gregtech.api.metatileentity.implementations.GT_MetaTileEntity_Hatch_Dynamo;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
@@ -236,7 +237,7 @@ public class GTMTE_SOFuelCellMK2  extends GT_MetaTileEntity_MultiBlockBase {
 					final Vector3ic offset = rotateOffsetVector(forgeDirection, X, Y, Z);
 					if(X == 0 && Y == 0) {
 						if(!thisController.getBlockOffset(offset.x(), offset.y(), offset.z()).getUnlocalizedName()
-								.equals(Block_GDCUnit.getInstance().getUnlocalizedName())) {
+								.equals(Block_LSCFUnit.getInstance().getUnlocalizedName())) {
 							formationChecklist = false;
 						}
 						continue;
