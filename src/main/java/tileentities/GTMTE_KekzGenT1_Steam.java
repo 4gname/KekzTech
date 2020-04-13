@@ -143,6 +143,13 @@ public class GTMTE_KekzGenT1_Steam extends GT_MetaTileEntity_MultiBlockBase {
 			super.mEfficiency = 0;
 			return false;
 		}
+		if (!super.depleteInput(GT_ModHandler.getSteam(DIST_AND_STEAM_PER_TICK))) {
+			super.mEUt = 0;
+			super.mEfficiency = 0;
+			return false;
+		} else {
+			addOutput(GT_ModHandler.getDistilledWater(DIST_AND_STEAM_PER_TICK/160));
+		}
 		if (this.mEUt <= 0) {
 			//stopMachine();
 			this.mEUt=0;
@@ -161,11 +168,6 @@ public class GTMTE_KekzGenT1_Steam extends GT_MetaTileEntity_MultiBlockBase {
 		storedFluid=0;
 		flow = DIST_AND_STEAM_PER_TICK;
 		if(flow<=0)return 0;
-		if (depleteInput(GT_ModHandler.getSteam(DIST_AND_STEAM_PER_TICK))) {
-			addOutput(GT_ModHandler.getDistilledWater(DIST_AND_STEAM_PER_TICK));
-		} else {
-			stopMachine();
-		}
 		tEU = EU_PER_TICK;
 		return tEU;
 	}
@@ -346,16 +348,16 @@ public class GTMTE_KekzGenT1_Steam extends GT_MetaTileEntity_MultiBlockBase {
 /* 3 line */	StatCollector.translateToLocal("GT5U.engine.efficiency") + ": "
 						+ EnumChatFormatting.YELLOW + (float)this.mEfficiency / 100.0F
 						+ EnumChatFormatting.YELLOW + " %",
-/* 4 line */	"Input Steam: " + (((float)this.mEfficiency / 100.0F == 100)
-						? EnumChatFormatting.GREEN + "" +DIST_AND_STEAM_PER_TICK + EnumChatFormatting.RESET + " L/t"
+/* 4 line */	"Output Dist. Water: " + (((float)this.mEfficiency / 100.0F == 100)
+						? EnumChatFormatting.GREEN + "" +DIST_AND_STEAM_PER_TICK/160 + EnumChatFormatting.RESET + " L/t"
 						: EnumChatFormatting.GREEN + "0" + EnumChatFormatting.RESET + " L/t"),
 /* 5 line */	"Maintenance: " + ((super.getRepairStatus() == super.getIdealStatus())
 						? EnumChatFormatting.GREEN + "No Problems" + EnumChatFormatting.RESET
 						: EnumChatFormatting.RED + "Has Problems" + EnumChatFormatting.RESET),
-/* 6 line */	"Fuel supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
+/* 6 line */	"Steam supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
 						? EnumChatFormatting.RED + "" + fuelConsumption + EnumChatFormatting.RESET + " L/t"
 						: EnumChatFormatting.RED + "0" + EnumChatFormatting.RESET + " L/t"),
-/* 7 line */	"Oxygen supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
+/* 7 line */	"Lubricant supply: " + ((this.mEUt * this.mEfficiency / 10000 >= 1)
 						? EnumChatFormatting.RED + "" + LUBRICANT_PER_TICK + EnumChatFormatting.RESET + " L/t"
 						: EnumChatFormatting.RED + "0" + EnumChatFormatting.RESET + " L/t")
 		};
