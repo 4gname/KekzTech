@@ -3,7 +3,6 @@ package kekztech;
 import blocks.*;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.ProgressManager;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -19,7 +18,6 @@ import items.dust.*;
 import items.ceramic.*;
 import items.plate.*;
 import items.ErrorItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -47,9 +45,10 @@ public class KekzCore {
 	public static KekzCore instance;
 
 	// Generators
-	private GTMTE_SOFuelCellMK1 sofc1;
-	private GTMTE_SOFuelCellMK3 sofc2;
-	private GTMTE_SOFuelCellMK2 sofc3;
+	private GTMTE_KekzGenT1 sofc1;
+	private GTMTE_KekzGenT2 sofc2;
+	private GTMTE_KekzGenT3 sofc3;
+	private GTMTE_KekzGenT1_Steam sofc1steam;
 
 	// Tank
 	private GTMTE_FluidMultiStorage fms;
@@ -130,11 +129,12 @@ public class KekzCore {
 	@Mod.EventHandler //Register GT
 	public void init(FMLInitializationEvent event) {
 		// Multiblock controllers
-		sofc1 = new GTMTE_SOFuelCellMK1(13101, "multimachine.fuelcellmk1", "Solid-Oxide Generator Mk I");
-		sofc2 = new GTMTE_SOFuelCellMK3(13102, "multimachine.fuelcellmk2", "Solid-Oxide Generator Mk II");
-		sofc3 = new GTMTE_SOFuelCellMK2(13103, "multimachine.fuelcellmk3", "Solid-Oxide Generator Mk III");
+		sofc1 = new GTMTE_KekzGenT1(13101, "multimachine.fuelcellmk1", "Solid-Oxide Generator Mk I");
+		sofc2 = new GTMTE_KekzGenT2(13102, "multimachine.fuelcellmk2", "Solid-Oxide Generator Mk II");
+		sofc3 = new GTMTE_KekzGenT3(13103, "multimachine.fuelcellmk3", "Solid-Oxide Generator Mk III");
 		fms = new GTMTE_FluidMultiStorage(13104, "multimachine.tf_fluidtank", "Multi-Tank");
         fms2 = new GTMTE_FluidMultiStorage2 (13105, "multimachine.tf_fluidtank1", "Single-Tank");
+		sofc1steam = new GTMTE_KekzGenT1_Steam (13106, "multimachine.fuelcellmk1s", "Steam Generator for Solid-Oxide Mk I");
 }
 
 	@Mod.EventHandler //Register Recipes
