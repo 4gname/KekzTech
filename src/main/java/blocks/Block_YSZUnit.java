@@ -1,6 +1,7 @@
 package blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import itemBlocks.IB_YSZUnit;
 import kekztech.KekzCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -31,12 +32,6 @@ public class Block_YSZUnit extends Block {
 		super.setBlockTextureName(KekzCore.MODID + ":" + "YSZCeramicElectrolyteUnit");
 		super.setHardness(5.0f);
 		super.setResistance(6.0f);
-		GameRegistry.registerBlock(getInstance(), blockName);
-	}
-
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
-		list.add("Yttria-Stabilized Zirconia Electrolyte");
-		list.add("Added by: " + EnumChatFormatting.YELLOW+" 4gname");
-
+		GameRegistry.registerBlock(getInstance(), IB_YSZUnit.class, blockName);
 	}
 }

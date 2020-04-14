@@ -1,6 +1,8 @@
 package blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import itemBlocks.IB_GDCUnit;
+import itemBlocks.IB_TFFTStorageFieldBlockT1;
 import kekztech.KekzCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -31,11 +33,6 @@ public class Block_GDCUnit extends Block {
 		super.setBlockTextureName(KekzCore.MODID + ":" + "GDCCeramicElectrolyteUnit");
 		super.setHardness(5.0f);
 		super.setResistance(6.0f);
-		GameRegistry.registerBlock(getInstance(), blockName);
-	}
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
-		list.add("Gadolinium Doped Ceria Electrolyte");
-		list.add("Added by: " + EnumChatFormatting.YELLOW+" 4gname");
-
+		GameRegistry.registerBlock(getInstance(), IB_GDCUnit.class, blockName);
 	}
 }
